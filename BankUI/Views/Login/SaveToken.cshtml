@@ -1,0 +1,15 @@
+﻿@model Token;
+@{
+    ViewData["Title"] = "Save Token ";
+    var data = Model.LoginToken;
+}
+<div class="text-center">
+    <h1 class="display-4">Welcome </h1>
+    <h1>
+    Shivam Jaiswal
+    @Html.DisplayFor(model => model.LoginToken)</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+<script>
+   localStorage.setItem('token', @ViewBag.Token);
+</script>

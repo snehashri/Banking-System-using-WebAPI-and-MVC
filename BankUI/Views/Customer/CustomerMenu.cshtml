@@ -1,0 +1,122 @@
+﻿@{Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row row-cols-sm-1 row-cols-sm-2 row-cols-sm-3 row-cols-sm-4 row-cols-1">
+    <div class="col" style=" margin-top: 7%; padding: 0%;">
+        <div class="card" style="margin-left: 10%; width: 78%;">
+            <div class="card-img">
+                <img src="~/Image/CustomerMenu/indian-rupee-money-bag_23-2148019023.jpg"
+                     class="card-img-top"
+                     alt="..." />
+            </div>
+
+            <div class="card-body">
+                <div style="display:flex; justify-content : flex-start; align-items:center;">
+
+                    <div style="display:flex; align-items:center;">
+                        <form asp-action="DepositView">
+
+                            <div class="form-group">
+                                <input type="submit" value="Deposit" class="btn btn-primary" />
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col" style="margin-top: 7%; padding: 0;">
+        <div class="card" style="width: 78%;">
+            <img src="~/Image/CustomerMenu/Balance.jpg"
+                 class="card-img-top"
+                 alt="..." />
+            <div class="card-body">
+                <div style="display:flex; justify-content : flex-start; align-items:center;">
+
+                    <div style="display:flex; align-items:center;">
+                        <form asp-action="GetAccountByCustId">
+
+                            <div class="form-group">
+                                <input type="submit" value="Account Balance" class="btn btn-primary" />
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col" style="margin-top: 7%; padding:0;">
+        <div class="card" style="width: 78%;">
+            <img src="~/Image/CustomerMenu/Withdraw.png"
+                 style="padding:10%;"
+                 class="card-img-top"
+                 alt="..." />
+            <div class="card-body">
+                <div style="display:flex; justify-content : flex-start; align-items:center;">
+
+                    <div style="display:flex; align-items:center;">
+
+                        <form asp-action="WithdrawView">
+
+                            <div class="form-group">
+                                <input type="submit" value="Withdraw" class="btn btn-primary" />
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col" style="margin-top: 7%; padding: 0%;">
+        <div class="card" style="width: 78%;">
+            <img src="~/Image/CustomerMenu/Transfer3.jpg"
+                 class="card-img-top"
+                 alt="..." />
+            <div class="card-body">
+                <div style="display:flex; justify-content : flex-start; align-items:center;">
+
+                    <div style="display:flex; align-items:center;">
+
+                        <form asp-action="TransferView">
+
+                            <div class="form-group">
+                                <input type="submit" value="Transfer" class="btn btn-primary" />
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col" style="margin-left: 2.5%; padding: 0%; margin-top: 7%;">
+        <div class="card" style="width: 78%;">
+            <img src="~/Image/CustomerMenu/Statement.jpg"
+                 class="card-img-top"
+                 alt="..." />
+            <div class="card-body">
+                <div style="display:flex; justify-content : flex-start; align-items:center;">
+
+                    <div style="display:flex; align-items:center;">
+
+                        <form asp-action="EnterId">
+
+                            <div class="form-group">
+                                <input type="submit" value="Statements" class="btn btn-primary" />
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

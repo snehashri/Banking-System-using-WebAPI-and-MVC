@@ -1,0 +1,120 @@
+﻿@model BankUI.Models.User
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <style type="text/css">
+        body {
+            /* fallback for old browsers */
+            background: #2411cb;
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: -webkit-linear-gradient(to right, rgb(17, 20, 203), rgb(195, 217, 255));
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            background: linear-gradient(to right, rgb(17, 20, 203), rgb(159, 194, 255))
+        }
+    </style>
+</head>
+
+<body>
+
+    @using (Html.BeginForm("Login", "Login"))
+    {
+
+
+        <div class="card" style="margin-left: 20%; margin-top: 5%; margin-right: 20%; margin-bottom: 5%; height: 60%;">
+
+            <div class="row">
+
+                <div class="col-4">
+                    <div class="card-body" style="padding-top: 10%;">
+                        <div class="col">
+                            <div class="row" style="margin-top: 0%; margin-bottom: 15%; margin-left: 10%;">
+                                <h1 class=""> Login </h1>
+                            </div>
+                            <div>
+                                <label>User ID: </label>
+                                @Html.EditorFor(model => model.UserId)
+                                @Html.ValidationMessageFor(model => model.Password)
+                            </div>
+                            <div>
+                                <label>Password:</label>
+                                @Html.PasswordFor(model => model.Password)
+                                @Html.ValidationMessageFor(model => model.Password)
+                            </div>
+                            <div class="form-group error">
+                                @if (@ViewBag.Failedcount != null)
+                                {
+
+                                    <label> Failed Attempt count is: @ViewBag.Failedcount</label>
+                                }
+
+                                @if (@ViewBag.NotValidUser != null)
+                                {
+
+                                    <label> @ViewBag.NotValidUser</label>
+                                }
+                            </div>
+                            <div class="loginbtn" style="margin-top:10%;">
+
+                                <input type="submit" style="margin-left: 30%;" value="Login" class="btn btn-primary" />
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="col">
+                    <img class="card-img" style="margin-top: 5%;" height="" src="~/Image/Login2.jpg" alt="Card image cap">
+                </div>
+            </div>
+        </div>
+
+
+        @*<div class="bs-example" style="border:2px solid gray;">
+
+                <div class="form-group centerlook">
+                    <h1> Login </h1>
+                </div>
+                <div class="form-group centerlook">
+                    <label>User Name: </label>
+                    @Html.EditorFor(model => model.UserId)
+                    @Html.ValidationMessageFor(model => model.UserId)
+                </div>
+                <div class="form-group centerlook">
+                    <label>Password:</label>
+                    @Html.EditorFor(model => model.Password)
+                    @Html.ValidationMessageFor(model => model.Password)
+
+                </div>
+                <div class="form-group error">
+                    @if (@ViewBag.Failedcount != null)
+                    {
+
+                        <label> Failed Attempt count is: @ViewBag.Failedcount</label>
+                    }
+
+                    @if (@ViewBag.NotValidUser != null)
+                    {
+
+                        <label> @ViewBag.NotValidUser</label>
+                    }
+                </div>
+                <div class="loginbtn">
+
+                    <input type="submit" value="Login" class="btn btn-primary" />
+
+                </div>
+            </div>*@
+    }
+</body>
+</html>   

@@ -1,0 +1,201 @@
+﻿@model BankUI.Models.CustomerDto
+
+@{
+    ViewData["Title"] = "CreateCustomerView";
+}
+@{
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title> Create Customer </title>
+    <style>
+
+        header .header {
+            background-color: #fff;
+            height: 45px;
+        }
+
+        header a img {
+            width: 134px;
+            margin-top: 4px;
+        }
+
+        .login-page {
+            width: 360px;
+            padding: 8% 0 0;
+            margin: auto;
+        }
+
+            .login-page .form .login {
+                margin-top: -31px;
+                margin-bottom: 26px;
+            }
+
+        .form {
+            position: relative;
+            z-index: 1;
+            background: #FFFFFF;
+            max-width: 360px;
+            margin: 0 auto 100px;
+            padding: 45px;
+            text-align: center;
+            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+        }
+
+            .form input {
+                font-family: "Roboto", sans-serif;
+                outline: 0;
+                background: #f2f2f2;
+                width: 100%;
+                border: 0;
+                margin: 0 0 15px;
+                padding: 15px;
+                box-sizing: border-box;
+                font-size: 14px;
+            }
+
+        .button {
+            font-family: "Roboto", sans-serif;
+            text-transform: uppercase;
+            outline: 0;
+            background-color: #328f8a;
+            background-image: linear-gradient(45deg,#328f8a,#08ac4b);
+            width: 100%;
+            border: 0;
+            padding: 15px;
+            color: #FFFFFF;
+            font-size: 14px;
+            -webkit-transition: all 0.3 ease;
+            transition: all 0.3 ease;
+            cursor: pointer;
+        }
+
+        .form .message {
+            margin: 15px 0 0;
+            color: #b3b3b3;
+            font-size: 12px;
+        }
+
+            .form .message a {
+                color: #4CAF50;
+                text-decoration: none;
+            }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        body {
+            background-color: #F0F8FF;
+            font-family: "Roboto", sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="login-page">
+        <div class="form">
+            <div class="login">
+                <div class="login-header">
+                    <h4>New Customer account</h4>
+
+                </div>
+            </div>
+
+
+            <form class="login-form" asp-action="CreateCustomerViewProcess">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label">Enter Name</label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Address" class="control-label">Enter Address</label>
+                    <input asp-for="Address" class="form-control" />
+                    <span asp-validation-for="Address" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DOB" class="control-label">Select Date of Birth</label>
+                    <input asp-for="DOB" class="form-control" />
+                    <span asp-validation-for="DOB" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PANno" class="control-label">Enter your PAN number</label>
+                    <input asp-for="PANno" class="form-control" />
+                    <span asp-validation-for="PANno" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                </div>
+            </form>
+
+            <div>
+                <a asp-action="EmployeeMenu">Back to Menu</a>
+            </div>
+
+
+
+        </div>
+    </div>
+
+</body>
+</html>
+
+
+<!--
+
+<h1>CreateCustomerView</h1>
+
+<h4>CustomerDto</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateCustomerViewProcess">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address" class="control-label"></label>
+                <input asp-for="Address" class="form-control" />
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DOB" class="control-label"></label>
+                <input asp-for="DOB" class="form-control" />
+                <span asp-validation-for="DOB" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PANno" class="control-label"></label>
+                <input asp-for="PANno" class="form-control" />
+                <span asp-validation-for="PANno" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Submit" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+    -->
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

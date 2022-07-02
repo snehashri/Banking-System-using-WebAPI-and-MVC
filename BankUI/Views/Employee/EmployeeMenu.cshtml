@@ -1,0 +1,196 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
+}
+
+<style>
+
+    .card {
+        margin: 0 auto; /* Added */
+        float: none; /* Added */
+        margin-bottom: 35%; /* Added */
+    }
+
+    .coloum1 {
+        padding-top: 0%;
+        padding-left: 10%;
+        padding-right: 20%;
+        margin-top: 7%;
+        padding-bottom: 10%
+    }
+
+    .button {
+        font-family: "Roboto", sans-serif;
+        text-transform: uppercase;
+        outline: 0;
+        background-color: #328f8a;
+        background-image: linear-gradient(45deg,#328f8a,#08ac4b);
+        width: 100%;
+        border: 0;
+        padding: 15px;
+        color: #FFFFFF;
+        font-size: 14px;
+        -webkit-transition: all 0.3 ease;
+        transition: all 0.3 ease;
+        cursor: pointer;
+    }
+
+    .coloum2 {
+        padding-top: 0%;
+        padding-left: 6%;
+        padding-right: 10%;
+        margin-top: 7%;
+    }
+</style>
+
+
+<div class="row row-cols-sm-1 row-cols-sm-2 row-cols-sm-3 row-cols-sm-4">
+    <div class="col" style="margin-top: 7%; padding: 0%;">
+        <div class="card" style="margin-left: 10%; width: 78%;">
+            <div class="card-img">
+                <img src="~/Image/EmployeeMenu/Create.jpg"
+                     class="card-img-top"
+                     alt="..." />
+            </div>
+
+            <div class="card-body">
+                <div style="display:flex; justify-content : flex-start; align-items:center;">
+
+                    <div style="display:flex; align-items:center;">
+                        <form asp-action="CreateCustomerView">
+
+                            <div class="form-group">
+                                @*<input type="submit" value="Create Customer" class="btn btn-primary btn-block" />*@
+                                <button type="submit" class="btn btn-primary btn-block">Create Customer</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col" style="margin-top: 7%; padding: 0%;">
+        <div class="card" style="margin-left: 10%; width: 78%;">
+            <img src="~/Image/EmployeeMenu/ViewAccount2.jpg"
+                 class="card-img-top"
+                 alt="..." />
+            <div class="card-body">
+                <div style="display:flex; justify-content : flex-start; align-items:center;">
+
+                    <div style="display:flex;">
+                        <form asp-action="CustAccDetailsView">
+
+                            <div class="form-group">
+                                @*<input type="submit" value="Accounts" class="btn btn-primary" />*@
+                                <button type="submit" class="btn btn-primary btn-block">Account</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+<!--
+
+<div class="row">
+        <div class="col coloum1">
+            <div class="card">
+                <div class="card-img">
+                    <img src="~/Image/EmployeeMenu/Create.jpg"
+                         class="card-img-top"
+                         alt="..." />
+                </div>
+
+                <div class="card-body">
+                    <div style="display:flex; justify-content : flex-start; align-items:center;">
+
+                        <div style="display:flex; align-items:center;">
+                            <form asp-action="CreateCustomerView">
+
+                                <div class="form-group">
+                                    <input type="submit" value="Create Customer" class="btn btn-primary" />
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col coloum2">
+            <div class="card">
+                <img src="~/Image/EmployeeMenu/ViewAccount.jpg"
+                     class="card-img-top"
+                     alt="..." />
+                <div class="card-body">
+                    <div style="display:flex; justify-content : flex-start; align-items:center;">
+
+                        <div style="display:flex; align-items:center;">
+                            <form asp-action="CustAccDetailsView">
+
+                                <div class="form-group">
+                                    <input type="submit" value="View Customer Account Details" class="btn btn-primary" />
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <form asp-action="CreateCustomerView">
+
+        <div class="form-group">
+            <input type="submit" value="Create Customer" class="btn btn-primary" />
+        </div>
+    </form>
+
+    <form asp-action="CustAccDetailsView">
+
+        <div class="form-group">
+            <input type="submit" value="View Customer Account Details" class="btn btn-primary" />
+        </div>
+    </form>
+
+
+
+<!--
+<form asp-action="CreateCustomerView">
+
+    <div class="form-group">
+        <input type="submit" value="Create Customer" class="btn btn-primary" />
+    </div>
+</form>
+
+<form asp-action="CustAccDetailsView">
+
+    <div class="form-group">
+        <input type="submit" value="View Customer Account Details" class="btn btn-primary" />
+    </div>
+</form>
+
+
+
+<div>
+    <a asp-controller="Login" asp-action="Index">Logout</a>
+</div>
+
+    -->
