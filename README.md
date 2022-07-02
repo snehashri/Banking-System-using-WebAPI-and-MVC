@@ -1,6 +1,6 @@
 # Banking-System-using-WebAPI-and-MVC
 
-## Description
+## Details
 
 * ASP.NET Core Web API v3.1
 * ASP.NET Core Web App(MVC)
