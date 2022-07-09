@@ -19,6 +19,11 @@ namespace TransactionMicroservice.Controllers
             _repo = repo;
         }
 
+        /// <summary>
+        /// This method returns all transaction details of account
+        /// </summary>
+        /// <param name="AccId"></param>
+        /// <returns></returns>
 
         [HttpGet]
         [Route("GetAllTransactionByAccountId/{AccId}")]
@@ -36,6 +41,12 @@ namespace TransactionMicroservice.Controllers
             }
 
         }
+        /// <summary>
+        /// withdraw method
+        /// </summary>
+        /// <param name="AccId"></param>
+        /// <param name="Amount"></param>
+        /// <returns></returns>
 
         [HttpPost]
         [Route("WithDraw/{AccId}/{Amount}")]
@@ -53,6 +64,12 @@ namespace TransactionMicroservice.Controllers
             }
 
         }
+        /// <summary>
+        /// deposit method
+        /// </summary>
+        /// <param name="AccId"></param>
+        /// <param name="Amount"></param>
+        /// <returns></returns>
 
         [HttpPost]
         [Route("Deposit/{AccId}/{Amount}")]
@@ -70,6 +87,13 @@ namespace TransactionMicroservice.Controllers
             }
 
         }
+        /// <summary>
+        /// This method Transfers amount from one account to another
+        /// </summary>
+        /// <param name="SrcAccId"></param>
+        /// <param name="TarAccId"></param>
+        /// <param name="amount"></param>
+        /// <returns></returns>
 
         [HttpPost]
         [Route("Transfer/{SrcAccId}/{TarAccId}/{amount}")]

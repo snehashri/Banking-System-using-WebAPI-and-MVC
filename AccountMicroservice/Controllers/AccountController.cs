@@ -18,6 +18,11 @@ namespace AccountMicroservice.Controllers
         {
             _repo = repo;
         }
+        /// <summary>
+        /// This method creates customer account
+        /// </summary>
+        /// <param name="Custid"></param>
+        /// <returns></returns>
 
         [HttpPost]
         [Route("CreateAccount/{Custid}")]
@@ -34,7 +39,11 @@ namespace AccountMicroservice.Controllers
                 return BadRequest();
             }
         }
-
+        /// <summary>
+        /// This method returns all accounts of the customer
+        /// </summary>
+        /// <param name="custId"></param>
+        /// <returns></returns>
         [HttpGet]
         [Route("GetCustomerAccounts/{custId}")]
         public IActionResult GetCustomerAccounts(int custId)
@@ -51,6 +60,11 @@ namespace AccountMicroservice.Controllers
             }
 
         }
+        /// <summary>
+        /// This method returns account by AccountId
+        /// </summary>
+        /// <param name="AccountID"></param>
+        /// <returns></returns>
         [HttpGet]
         [Route("GetAccountById/{AccountID}")]
         public IActionResult GetAccountById(int AccountID)
@@ -67,6 +81,11 @@ namespace AccountMicroservice.Controllers
             }
 
         }
+        /// <summary>
+        /// This method returns Account balance by AccountId
+        /// </summary>
+        /// <param name="AccountID"></param>
+        /// <returns></returns>
 
         [HttpGet]
         [Route("GetBalance/{AccountID}")]
@@ -85,6 +104,13 @@ namespace AccountMicroservice.Controllers
 
         }
 
+        /// <summary>
+        /// This method returns all Statements of account for given dates
+        /// </summary>
+        /// <param name="AccountID"></param>
+        /// <param name="fromDate"></param>
+        /// <param name="toDate"></param>
+        /// <returns></returns>
         [HttpGet]
         [Route("GetAccountStatements/{AccountID}/{fromDate}/{toDate}")]
         public IActionResult GetAccountStatements(int AccountID, DateTime fromDate, DateTime toDate)
@@ -101,6 +127,12 @@ namespace AccountMicroservice.Controllers
             }
 
         }
+        /// <summary>
+        /// This method deposits amount 
+        /// </summary>
+        /// <param name="AccId"></param>
+        /// <param name="Amount"></param>
+        /// <returns></returns>
         
         [HttpPost]
         [Route("Deposit/{AccId}/{Amount}")]
@@ -117,6 +149,12 @@ namespace AccountMicroservice.Controllers
                 return BadRequest();
             }
         }
+        /// <summary>
+        /// This method withdraws amount
+        /// </summary>
+        /// <param name="AccId"></param>
+        /// <param name="Amount"></param>
+        /// <returns></returns>
         [HttpPost]
         [Route("Withdraw/{AccId}/{Amount}")]
         public IActionResult Withdraw(int AccId, float Amount)
@@ -132,6 +170,10 @@ namespace AccountMicroservice.Controllers
                 return BadRequest();
             }
         }
+        /// <summary>
+        /// This method returns all accounts
+        /// </summary>
+        /// <returns></returns>
 
         [HttpGet]
         [Route("GetAllAccounts")]

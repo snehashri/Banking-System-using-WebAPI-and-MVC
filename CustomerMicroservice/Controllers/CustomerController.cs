@@ -20,7 +20,11 @@ namespace CustomerMicroservice.Controllers
         {
             _repo = repo;
         }
-
+        /// <summary>
+        /// This method returns Customer details by CustomerId
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet]
         [Route("GetCustomerById/{id}")]
         public IActionResult GetCustomerById(int id)
@@ -41,6 +45,11 @@ namespace CustomerMicroservice.Controllers
             }
         }
 
+        /// <summary>
+        /// This method creates new customer
+        /// </summary>
+        /// <param name="customer"></param>
+        /// <returns></returns>
         [HttpPost]
         [Route("AddCustomer")]
         public IActionResult AddCustomer(Customer customer)

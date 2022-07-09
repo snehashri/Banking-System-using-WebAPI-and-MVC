@@ -14,6 +14,11 @@ namespace RulesMicroservice.Controllers
     {
         static readonly log4net.ILog _log4net = log4net.LogManager.GetLogger(typeof(RulesController));
 
+        /// <summary>
+        /// This method checks minimum balance condition
+        /// </summary>
+        /// <param name="balance"></param>
+        /// <returns></returns>
         [HttpGet]
         [Route("EvaluateMinimumBalance/{balance}")]
         public IActionResult EvaluateMinimumBalance(float balance)
@@ -31,6 +36,10 @@ namespace RulesMicroservice.Controllers
             return Ok(rs);
 
         }
+        /// <summary>
+        /// This method returns Service Charges
+        /// </summary>
+        /// <returns></returns>
 
         [HttpGet]
         [Route("GetServiceCharges")]
